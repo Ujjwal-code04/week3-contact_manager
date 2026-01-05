@@ -1,218 +1,116 @@
 Contact Management System
-Project Description
-A comprehensive contact management system built with Python using dictionaries and functions. This system allows users to manage their contacts with full CRUD operations, search functionality, and data persistence.
 
-What I Learned
-Functions: Creating reusable, organized code blocks
-Dictionaries: Storing and retrieving data using key-value pairs
-String Methods: Advanced text manipulation and formatting
-File Operations: Saving and loading data from JSON files
-Input Validation: Ensuring data quality and preventing errors
-Error Handling: Gracefully handling unexpected situations
-Features
-✓- Add new contacts with validation
-✓- Search contacts by name (partial matching supported)
-✓- Update existing contact information
-✓- Delete contacts with confirmation
-✓- View all contacts in formatted display
-✓- Save contacts to JSON file automatically
-✓- Load contacts from file on startup
-✓- Export contacts to CSV format
-✓- Contact statistics and analytics
-✓- Phone number and email validation
-✓- User-friendly menu interface
-✓- Error handling for all operations
-How to Run
-bash Copy
-# Navigate to project folder
+A simple, efficient, and user-friendly Contact Management System built using Python.
+This project allows users to store, manage, search, and organize contacts with full CRUD operations and file persistence.
+
+🚀 Features
+
+Add new contacts with validation
+
+Search contacts using partial name matching
+
+Update existing contacts
+
+Delete contacts with confirmation
+
+View all contacts in formatted display
+
+Save and load contacts automatically using JSON
+
+Export contacts to CSV
+
+Group contacts (Friends, Family, Work, Other)
+
+View contact statistics
+
+User-friendly menu system
+
+Error handling and input validation
+
+🛠️ Technologies Used
+
+Python 3
+
+Dictionaries
+
+File Handling
+
+JSON
+
+CSV
+
+Datetime module
+
+📂 Project Structure
+week3-contact-manager/
+│
+├── contacts_manager.py     # Main program
+├── contacts_data.json      # Contact storage file (auto generated)
+├── contacts.csv            # Exported contacts
+└── README.md               # Project documentation
+
+▶️ How to Run
+Step 1 – Open terminal in project folder
 cd week3-contact-manager
 
-# Install any requirements
-pip install -r requirements.txt  # (if needed)
-
-# Run the program
+Step 2 – Run the program
 python contacts_manager.py
 
-# Run tests
-python test_contacts.py
-Data Structure
-python Copy
-contacts = {
-    "John Doe": {
-        "phone": "+1234567890",
-        "email": "john@example.com",
-        "address": "123 Main St",
-        "group": "Friends"
-    },
-    "Jane Smith": {
-        "phone": "+0987654321",
-        "email": "jane@example.com",
-        "address": "456 Oak Ave",
-        "group": "Work"
-    }
+📋 Menu Options
+Option	Action
+1	Add New Contact
+2	Search Contact
+3	Update Contact
+4	Delete Contact
+5	View All Contacts
+6	Export to CSV
+7	View Statistics
+8	Exit
+📦 Data Storage Format
+
+Contacts are saved in contacts_data.json like this:
+
+{
+  "John Doe": {
+    "phone": "12345678900",
+    "email": "john@example.com",
+    "address": "123 Main Street",
+    "group": "Friends",
+    "updated": "2025-01-05 10:25:33"
+  }
 }
-Sample Menu
-Code Copy
-==================================================
-      CONTACT MANAGEMENT SYSTEM
-==================================================
-✅ No existing contacts file found. Starting fresh.
 
-==============================
-          MAIN MENU
-==============================
-1. Add New Contact
-2. Search Contact
-3. Update Contact
-4. Delete Contact
-5. View All Contacts
-6. Export to CSV
-7. View Statistics
-8. Exit
-==============================
-Enter your choice (1-8): 1
+📊 Statistics Module
 
---- ADD NEW CONTACT ---
-Enter contact name: Ujjwal Kumar
-Enter phone number: 7250446373
-Enter email (optional, press Enter to skip): rajujjwal1804@gmail.com
-Enter address (optional): Patna, Bihar
-Enter group (Friends/Work/Family/Other): Family
-✅ Contacts saved to contacts_data.json
-✅ Contact 'Ujjwal Kumar' added successfully!
+The system shows:
 
-==============================
-          MAIN MENU
-==============================
-1. Add New Contact
-2. Search Contact
-3. Update Contact
-4. Delete Contact
-5. View All Contacts
-6. Export to CSV
-7. View Statistics
-8. Exit
-==============================
-Enter your choice (1-8): 5
+Total number of contacts
 
---- ALL CONTACTS (1 total) ---
-============================================================
-👤 Ujjwal Kumar
-   📞 7250446373
-   📧 rajujjwal1804@gmail.com
-   👥 Family
-----------------------------------------
+Group-wise count (Friends, Work, Family, etc.)
 
-==============================
-          MAIN MENU
-==============================
-1. Add New Contact
-2. Search Contact
-3. Update Contact
-4. Delete Contact
-5. View All Contacts
-6. Export to CSV
-7. View Statistics
-8. Exit
-==============================
-Enter your choice (1-8): 1
+Recently updated contacts (last 7 days)
 
---- ADD NEW CONTACT ---
-Enter contact name: Shreya
-Enter phone number: 9595465665
-Enter email (optional, press Enter to skip): shreya@gmail.com
-Enter address (optional): main street 
-Enter group (Friends/Work/Family/Other): family
-✅ Contacts saved to contacts_data.json
-✅ Contact 'Shreya' added successfully!
+📤 CSV Export
 
-==============================
-          MAIN MENU
-==============================
-1. Add New Contact
-2. Search Contact
-3. Update Contact
-4. Delete Contact
-5. View All Contacts
-6. Export to CSV
-7. View Statistics
-8. Exit
-==============================
-Enter your choice (1-8): 5
+All contacts can be exported to contacts.csv which can be opened in Excel or Google Sheets.
 
---- ALL CONTACTS (2 total) ---
-============================================================
-👤 Ujjwal Kumar
-   📞 7250446373
-   📧 rajujjwal1804@gmail.com
-   👥 Family
-----------------------------------------
-👤 Shreya
-   📞 9595465665
-   📧 shreya@gmail.com
-   👥 Family
-----------------------------------------
+🎯 Learning Outcomes
 
-==============================
-          MAIN MENU
-==============================
-1. Add New Contact
-2. Search Contact
-3. Update Contact
-4. Delete Contact
-5. View All Contacts
-6. Export to CSV
-7. View Statistics
-8. Exit
-==============================
-Enter your choice (1-8): 2
-Enter name to search: shreya
+This project demonstrates:
 
-Found 1 contact(s):
---------------------------------------------------
-1. Shreya
-   📞 Phone: 9595465665
-   📧 Email: shreya@gmail.com
-   📍 Address: main street
-   👥 Group: Family
+Dictionary-based data storage
 
-==============================
-          MAIN MENU
-==============================
-1. Add New Contact
-          MAIN MENU
-==============================
-1. Add New Contact
-2. Search Contact
-3. Update Contact
-4. Delete Contact
-5. View All Contacts
-6. Export to CSV
-7. View Statistics
-8. Exit
-==============================
-Enter your choice (1-8):
+CRUD operations
 
-Statistics:
-- Total Contacts:2
-- Friends: 0 contacts
-- Work: 0 contacts
-- Family: 2 contacts
-- 
-Challenges & Solutions
-Challenge: Handling duplicate contact names
+Input validation
 
-Solution: Added option to view all matches and select which to update
+File handling (JSON & CSV)
 
-Challenge: Phone number validation across different formats
+Modular programming using functions
 
-Solution: Created flexible validation function supporting multiple formats
+Menu-driven application design
 
-Challenge: Efficient search with partial matching
+👨‍💻 Developed By
 
-Solution: Used dictionary comprehension with lower() for case-insensitive search
-
-Challenge: Data persistence with JSON
-
-Solution: Used json module with proper error handling for file operations
-
+ujjuu
+Engineering Student
